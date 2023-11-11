@@ -81,3 +81,34 @@
   });
 
 })(jQuery);
+
+/*****************************************
+ DISPLAY HIIDEN COMPONENTS
+ *****************************************/
+ function showMore(event) {
+  event.preventDefault();
+  var hiddenItems = document.querySelectorAll('.hidden');
+  for (var i = 0; i < hiddenItems.length; i++) {
+      hiddenItems[i].style.display = 'block';
+      hiddenItems[i].style.opacity = '1';
+      hiddenItems[i].style.transition = 'opacity 0.5s ease-out';
+  }
+  event.target.textContent = 'Show Less';
+  event.target.onclick = showLess;
+}
+
+function showLess(event) {
+  event.preventDefault();
+  var hiddenItems = document.querySelectorAll('.hidden');
+  for (var i = 0; i < hiddenItems.length; i++) {
+      hiddenItems[i].style.opacity = '0';
+      hiddenItems[i].style.transition = 'opacity 0.5s ease-in';
+  }
+  setTimeout(function() {
+      for (var i = 0; i < hiddenItems.length; i++) {
+          hiddenItems[i].style.display = 'none';
+      }
+  }, 500); // Adjust the duration of the animation as desired
+  event.target.textContent = 'Read More';
+  event.target.onclick = showMore;
+}

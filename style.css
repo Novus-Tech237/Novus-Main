@@ -21,12 +21,6 @@
     }
 }
 
-/**************************
-    Web Color Configuration
-***************************/
-:root{
-
-}
 
 [class^="flaticon-"]:before,
 [class*=" flaticon-"]:before,
@@ -74,7 +68,7 @@ h5,
 h6,
 body,
 p {
-    font-family: Poppins;
+    font-family: sans-serif, 'Poppins';
 }
 
 .portfolio-details h4 a,
@@ -123,8 +117,6 @@ hr.invis2 {
 }
 
 
-
-
 /*********************
     HEADERS
 **********************/
@@ -139,7 +131,12 @@ hr.invis2 {
     opacity: 1;
     z-index: 11;
 }
-
+.favicon {
+    width: 200px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 1em;
+}
 .transparent-header {
     background-color: transparent;
     position: absolute;
@@ -277,9 +274,9 @@ hr.invis2 {
 
 
 .navbar-brand {
-    display: inline-block;
+    display: flex;
     font-size: 24px;
-    position: relative;
+    align-items: center;
     font-weight: 300;
     line-height: inherit;
     padding-bottom: 0.25rem;
@@ -1423,3 +1420,102 @@ a,
     -ms-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
 }
+
+.team_member{
+    background: var(--color-bg3);
+    padding: 2rem;
+    /* border: 1px solid transparent; */
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+.team_member:hover{
+    background: transparent;
+    border-color: #989898;
+}
+.team_member-image{
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.team_member-image img{
+    filter: saturate(0);
+    border-radius: 10%;
+}
+.team_member-image:hover img{
+    filter: saturate(1);
+}
+.team_member-info *{
+    text-align: center;
+    margin-top: 1.4rem;
+}
+.team_member-info p{
+    color: var(--color-light);
+}
+.team_member-socials{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-primary);
+    border-radius: 1rem 0 0 1rem;
+    box-shadow:  -2rem 0 2rem rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+.team_member-socials i{
+    font-size: 25px;
+}
+.team_member:hover .team_member-socials{
+    right: 0;
+}
+.team_member-socials a{
+    padding: 1rem;
+}
+
+/*********************
+    WEB-SCROLL BAR STYLINGS
+**********************/
+/* Set the width and height of the scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Change the background color of the scrollbar track */
+  ::-webkit-scrollbar-track {
+    background-color: #112c40;
+  }
+  
+  /* Change the color and shape of the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+  
+  /* Change the color of the scrollbar thumb on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #205992;
+  }
+@media (max-width: 992px) {
+    .media-element img{
+        height: 20rem;
+    }
+}
+
+@media (max-width: 420px){
+    .media-element img{
+        height: 16.5rem;
+    }
+}
+
+@media (max-width: 1980px){
+    .media-element img{
+        height:16.5rem;
+    }
+}
+
+
