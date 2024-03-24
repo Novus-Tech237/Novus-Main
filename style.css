@@ -48,7 +48,9 @@
 /*********************
     DEFAULT
 **********************/
-
+html{
+    overflow-x: hidden;
+}
 body,
 p {
     color: #999999;
@@ -771,25 +773,56 @@ section::after {
     HEROS
 **********************/
 
-.hero {
-    display: flex;
+/* .hero {
     top:0;
     align-items: center;
     height: 100vh;
     z-index: 1;
     text-align: center;
     position: relative;
-    background: url(upload/demo-bg.jpg) no-repeat center center scroll; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
-
-.smallhero {
-    background-image: none;
-    height: 70vh;
-}
+} */
+.hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+  }
+  
+  .video-background {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .video-background video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .hero-desc {
+    position: relative;
+    z-index: 5;
+    /* Add styles for the hero description */
+  }
+  
+  .bottom-button {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Add styles for the bottom button */
+  }
 
 .hero h2 {
     font-size: 60px;
@@ -798,6 +831,7 @@ section::after {
     padding:1rem 0 1.2rem;
     margin:0;
     line-height: 1;
+    opacity: 1;
 }
 
 .hero h4 {

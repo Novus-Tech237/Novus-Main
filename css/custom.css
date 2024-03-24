@@ -1,3 +1,138 @@
 .hidden {
     display: none;
 }
+
+/* 10. Video */
+.video-bg {
+	background-image: url(../upload/Graphics.jpg);
+	overflow: hidden;
+	background-position: center;
+	background-size: cover;
+}
+.video-overlay {
+	position: relative;
+	z-index: 1;
+}
+.video-overlay::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 880px;
+	background: rgba(0, 44, 71, 0.781);
+	height: 100%;
+	z-index: -1;
+}
+.video-title > span {
+	font-size: 18px;
+	font-weight: 900;
+	font-family: 'Playfair Display', serif;
+	color: rgba(0, 44, 71, 0.781);
+	padding: 11px 15px;
+	background: #f9f9f9;
+	line-height: 1;
+	display: inline-block;
+	margin-left: 10px;
+	margin-bottom: 20px;
+	position: relative;
+}
+.video-title > span::before {
+	content: "";
+	position: absolute;
+	left: -10px;
+	top: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 40px 10px;
+	border-color: transparent transparent #fff transparent;
+}
+.video-title > span::after {
+	content: "";
+	position: absolute;
+	right: -10px;
+	top: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 40px 10px 0 0;
+	border-color: #fff transparent transparent transparent;
+}
+.video-title {
+	padding: 190px 0;
+	padding-left: 70px;
+}
+.video-title h2 {
+	font-size: 70px;
+	text-transform: uppercase;
+	color: #fff;
+	line-height: 1;
+	margin-bottom: 35px;
+}
+.video-title h2 span {
+	font-weight: 900;
+	display: block;
+}
+.video-title a {
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 700;
+	display: inline-block;
+	position: relative;
+}
+.video-title a > span {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 4px 0 4px 4px;
+	border-color: transparent transparent transparent #fff;
+	margin-left: 30px;
+	position: relative;
+	transition: .4s linear;
+}
+.video-title a > span::before {
+	content: "";
+	position: absolute;
+	right: 4px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 22px;
+	height: 2px;
+	background: #fff;
+	transition: .4s linear;
+}
+.video-title a:hover span {
+	margin-left: 50px;
+}
+.video-title a:hover span::before {
+	width: 42px;
+}
+.video-play {
+	text-align: center;
+}
+.video-play a {
+	display: inline-block;
+	position: relative;
+}
+.video-play a::before {
+	content: "";
+	position: absolute;
+	right: 73px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0;
+	height: 2px;
+	background: #fff;
+	transition: .4s linear;
+}
+.video-play a:hover::before {
+	width: 78px;
+}
+.s-video-overlay::before {
+	background: rgb(227, 34, 34, 0.859);
+}
+.s-video-overlay .video-title > span {
+	color: #e32222;
+}

@@ -112,3 +112,4 @@ function showLess(event) {
   event.target.textContent = 'Read More';
   event.target.onclick = showMore;
 }
+
